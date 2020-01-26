@@ -1,7 +1,9 @@
 
 package af.gov.anar.hooks.service;
 
-import af.gov.anar.hooks.data.HookData;
+import af.gov.anar.hooks.command.JdbcSupport;
+import af.gov.anar.hooks.data.*;
+import af.gov.anar.hooks.domain.Hook;
 import af.gov.anar.hooks.domain.HookRepository;
 import af.gov.anar.hooks.exception.HookNotFoundException;
 import org.joda.time.LocalDate;
@@ -51,7 +53,7 @@ public class HookReadPlatformServiceImpl implements HookReadPlatformService {
     @Override
     @Cacheable(value = "hooks", key = "T(org.apache.fineract.infrastructure.core.service.ThreadLocalContextUtil).getTenant().getTenantIdentifier().concat('HK')")
     public List<Hook> retrieveHooksByEvent(final String actionName,
-            final String entityName) {
+                                           final String entityName) {
 
         return this.hookRepository.findAllHooksListeningToEvent(actionName,
                 entityName);
@@ -60,7 +62,6 @@ public class HookReadPlatformServiceImpl implements HookReadPlatformService {
     @Override
     public HookData retrieveNewHookDetails(final String templateName) {
 
-        this.context.authenticatedUser();
         final TemplateMapper rm = new TemplateMapper(this.jdbcTemplate);
         final String sql;
         List<HookTemplateData> templateData;
