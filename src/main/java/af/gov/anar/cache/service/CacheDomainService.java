@@ -1,14 +1,9 @@
 
 package af.gov.anar.cache.service;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 import af.gov.anar.cache.domain.CacheType;
 import af.gov.anar.cache.domain.PlatformCache;
 import af.gov.anar.cache.domain.PlatformCacheRepository;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

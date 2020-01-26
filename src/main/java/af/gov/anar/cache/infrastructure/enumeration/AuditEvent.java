@@ -3,7 +3,6 @@ package af.gov.anar.cache.infrastructure.enumeration;
 import lombok.Getter;
 
 import static af.gov.anar.lib.audit.util.AuditEventType.USER_EVENT;
-import static af.gov.anar.lib.audit.util.AuditEventType.SYSTEM_EVENT;
 
 /**
  * Enum for Audit Events
