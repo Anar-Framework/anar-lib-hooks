@@ -2,6 +2,7 @@
 package af.gov.anar.cache.util;
 
 
+import af.gov.anar.cache.domain.CacheType;
 import af.gov.anar.lang.data.EnumOptionData;
 
 public class CacheEnumerations {
