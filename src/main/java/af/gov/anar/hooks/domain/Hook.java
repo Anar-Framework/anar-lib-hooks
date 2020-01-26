@@ -1,17 +1,16 @@
 
 package af.gov.anar.hooks.domain;
 
+import af.gov.anar.hooks.api.HookApiConstants;
 import af.gov.anar.hooks.command.JsonCommand;
+import af.gov.anar.hooks.template.domain.Template;
 import af.gov.anar.lang.data.AbstractAuditableCustom;
 import af.gov.anar.lang.data.AbstractPersistableCustom;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.fineract.infrastructure.core.api.JsonCommand;
-import org.apache.fineract.infrastructure.core.domain.AbstractAuditableCustom;
-import org.apache.fineract.template.domain.Template;
-import org.apache.fineract.useradministration.domain.AppUser;
+
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
@@ -52,8 +51,8 @@ public class Hook extends AbstractPersistableCustom<Long> {
 
     public static Hook fromJson(final JsonCommand command, final HookTemplate template, final Set<HookConfiguration> config,
                                 final Set<HookResource> events, final Template ugdTemplate) {
-        final String displayName = command.stringValueOfParameterNamed(displayNameParamName);
-        Boolean isActive = command.booleanObjectValueOfParameterNamed(isActiveParamName);
+        final String displayName = command.stringValueOfParameterNamed(HookApiConstants.displayNameParamName);
+        Boolean isActive = command.booleanObjectValueOfParameterNamed(HookApiConstants.isActiveParamName);
         if (isActive == null) isActive = false;
         return new Hook(template, displayName, isActive, config, events, ugdTemplate);
     }
@@ -117,36 +116,36 @@ public class Hook extends AbstractPersistableCustom<Long> {
 
         final Map<String, Object> actualChanges = new LinkedHashMap<>(5);
 
-        if (command.isChangeInStringParameterNamed(displayNameParamName, this.name)) {
-            final String newValue = command.stringValueOfParameterNamed(displayNameParamName);
-            actualChanges.put(displayNameParamName, newValue);
+        if (command.isChangeInStringParameterNamed(HookApiConstants.displayNameParamName, this.name)) {
+            final String newValue = command.stringValueOfParameterNamed(HookApiConstants.displayNameParamName);
+            actualChanges.put(HookApiConstants.displayNameParamName, newValue);
             this.name = newValue;
         }
 
-        if (command.isChangeInBooleanParameterNamed(isActiveParamName, this.isActive)) {
-            final Boolean newValue = command.booleanObjectValueOfParameterNamed(isActiveParamName);
-            actualChanges.put(isActiveParamName, newValue);
+        if (command.isChangeInBooleanParameterNamed(HookApiConstants.isActiveParamName, this.isActive)) {
+            final Boolean newValue = command.booleanObjectValueOfParameterNamed(HookApiConstants.isActiveParamName);
+            actualChanges.put(HookApiConstants.isActiveParamName, newValue);
             this.isActive = newValue;
         }
 
-        if (command.isChangeInLongParameterNamed(templateIdParamName, getUgdTemplateId())) {
-            final Long newValue = command.longValueOfParameterNamed(templateIdParamName);
-            actualChanges.put(templateIdParamName, newValue);
+        if (command.isChangeInLongParameterNamed(HookApiConstants.templateIdParamName, getUgdTemplateId())) {
+            final Long newValue = command.longValueOfParameterNamed(HookApiConstants.templateIdParamName);
+            actualChanges.put(HookApiConstants.templateIdParamName, newValue);
         }
 
         // events
-        if (command.hasParameter(eventsParamName)) {
-            final JsonArray jsonArray = command.arrayOfParameterNamed(eventsParamName);
+        if (command.hasParameter(HookApiConstants.eventsParamName)) {
+            final JsonArray jsonArray = command.arrayOfParameterNamed(HookApiConstants.eventsParamName);
             if (jsonArray != null) {
-                actualChanges.put(eventsParamName, jsonArray);
+                actualChanges.put(HookApiConstants.eventsParamName, jsonArray);
             }
         }
 
         // config
-        if (command.hasParameter(configParamName)) {
-            final JsonElement element = command.parsedJson().getAsJsonObject().get(configParamName);
+        if (command.hasParameter(HookApiConstants.configParamName)) {
+            final JsonElement element = command.parsedJson().getAsJsonObject().get(HookApiConstants.configParamName);
             if (element != null) {
-                actualChanges.put(configParamName, element);
+                actualChanges.put(HookApiConstants.configParamName, element);
             }
         }
 

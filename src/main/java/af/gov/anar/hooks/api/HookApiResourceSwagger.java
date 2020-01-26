@@ -1,19 +1,16 @@
 
 package af.gov.anar.hooks.api;
 
+import af.gov.anar.hooks.data.Event;
+import af.gov.anar.hooks.data.Field;
+import af.gov.anar.hooks.data.Grouping;
+import af.gov.anar.hooks.data.HookTemplateData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.apache.fineract.infrastructure.hooks.data.Event;
-import org.apache.fineract.infrastructure.hooks.data.Field;
-import org.apache.fineract.infrastructure.hooks.data.Grouping;
-import org.apache.fineract.infrastructure.hooks.data.HookTemplateData;
 import org.joda.time.LocalDate;
 
 import java.util.List;
 
-/**
- * Created by sanyam on 11/8/17.
- */
 
 final class HookApiResourceSwagger {
     private HookApiResourceSwagger() {

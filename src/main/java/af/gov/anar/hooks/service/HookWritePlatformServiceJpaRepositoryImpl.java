@@ -22,9 +22,13 @@ import javax.persistence.PersistenceException;
 
 import af.gov.anar.hooks.command.FromJsonHelper;
 import af.gov.anar.hooks.command.JsonCommand;
+import af.gov.anar.hooks.template.domain.Template;
+import af.gov.anar.hooks.template.domain.TemplateRepository;
+import af.gov.anar.hooks.template.exception.TemplateNotFoundException;
 import af.gov.anar.lang.data.ApiParameterError;
 import af.gov.anar.lang.data.CommandProcessingResult;
 import af.gov.anar.lang.data.CommandProcessingResultBuilder;
+import af.gov.anar.lang.infrastructure.exception.common.PlatformApiDataValidationException;
 import af.gov.anar.lang.infrastructure.exception.common.PlatformDataIntegrityException;
 import af.gov.anar.lang.validation.DataValidatorBuilder;
 import org.apache.commons.lang.exception.ExceptionUtils;
@@ -98,7 +102,7 @@ public class HookWritePlatformServiceJpaRepositoryImpl
             if (command.hasParameter(templateIdParamName)) {
                 final Long ugdTemplateId = command
                         .longValueOfParameterNamed(templateIdParamName);
-                ugdTemplate = this.ugdTemplateRepository.findOne(ugdTemplateId);
+                ugdTemplate = this.ugdTemplateRepository.getOne(ugdTemplateId);
                 if (ugdTemplate == null) {
                     throw new TemplateNotFoundException(ugdTemplateId);
                 }
@@ -143,7 +147,7 @@ public class HookWritePlatformServiceJpaRepositoryImpl
                     final Long ugdTemplateId = command
                             .longValueOfParameterNamed(templateIdParamName);
                     final Template ugdTemplate = this.ugdTemplateRepository
-                            .findOne(ugdTemplateId);
+                            .getOne(ugdTemplateId);
                     if (ugdTemplate == null) {
                         changes.remove(templateIdParamName);
                         throw new HookTemplateNotFoundException(ugdTemplateId);
@@ -209,7 +213,7 @@ public class HookWritePlatformServiceJpaRepositoryImpl
     }
 
     private Hook retrieveHookBy(final Long hookId) {
-        final Hook hook = this.hookRepository.findOne(hookId);
+        final Hook hook = this.hookRepository.getOne(hookId);
         if (hook == null) {
             throw new HookNotFoundException(hookId);
         }
