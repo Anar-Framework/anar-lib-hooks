@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>af.gov.anar</groupId>
-	<artifactId>anar-cache</artifactId>
+	<artifactId>anar-hooks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anar-cache</name>
-	<description>Cache Module of Anar Framework</description>
+	<name>anar-hooks</name>
+	<description>Hooks Module of Anar Framework</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
