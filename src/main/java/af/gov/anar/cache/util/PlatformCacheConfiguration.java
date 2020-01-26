@@ -1,6 +1,7 @@
 
 package af.gov.anar.cache.util;
 
+import af.gov.anar.cache.service.RuntimeDelegatingCacheManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurer;
@@ -12,7 +13,6 @@ import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@SuppressWarnings("deprecation")
 @Configuration
 @EnableCaching
 public class PlatformCacheConfiguration implements CachingConfigurer {

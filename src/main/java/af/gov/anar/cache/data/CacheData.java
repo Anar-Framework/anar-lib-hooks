@@ -2,6 +2,8 @@
 package af.gov.anar.cache.data;
 
 
+import af.gov.anar.lang.data.EnumOptionData;
+
 public class CacheData {
 
     @SuppressWarnings("unused")

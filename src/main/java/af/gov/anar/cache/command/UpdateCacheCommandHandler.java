@@ -9,19 +9,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import af.gov.anar.cache.annotation.CommandType;
+import af.gov.anar.cache.domain.CacheType;
+import af.gov.anar.cache.service.CacheWritePlatformService;
+import af.gov.anar.cache.util.CacheApiConstants;
+import af.gov.anar.lang.data.ApiParameterError;
+import af.gov.anar.lang.data.CommandProcessingResult;
+import af.gov.anar.lang.data.CommandProcessingResultBuilder;
+import af.gov.anar.lang.infrastructure.exception.common.InvalidJsonException;
+import af.gov.anar.lang.infrastructure.exception.common.PlatformApiDataValidationException;
+import af.gov.anar.lang.validation.DataValidatorBuilder;
 import org.apache.commons.lang.StringUtils;
-import org.apache.fineract.commands.annotation.CommandType;
-import org.apache.fineract.commands.handler.NewCommandSourceHandler;
-import org.apache.fineract.infrastructure.cache.CacheApiConstants;
-import org.apache.fineract.infrastructure.cache.domain.CacheType;
-import org.apache.fineract.infrastructure.cache.service.CacheWritePlatformService;
-import org.apache.fineract.infrastructure.core.api.JsonCommand;
-import org.apache.fineract.infrastructure.core.data.ApiParameterError;
-import org.apache.fineract.infrastructure.core.data.CommandProcessingResult;
-import org.apache.fineract.infrastructure.core.data.CommandProcessingResultBuilder;
-import org.apache.fineract.infrastructure.core.data.DataValidatorBuilder;
-import org.apache.fineract.infrastructure.core.exception.InvalidJsonException;
-import org.apache.fineract.infrastructure.core.exception.PlatformApiDataValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,8 +27,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.google.gson.reflect.TypeToken;
 
 @Service
-//@CommandType(entity = "CACHE", action = "UPDATE")
-public class UpdateCacheCommandHandler implements NewCommandSourceHandler {
+@CommandType(entity = "CACHE", action = "UPDATE")
+public class UpdateCacheCommandHandler {
 
     private final CacheWritePlatformService cacheService;
     private static final Set<String> REQUEST_DATA_PARAMETERS = new HashSet<>(Arrays.asList(CacheApiConstants
@@ -42,7 +40,6 @@ public class UpdateCacheCommandHandler implements NewCommandSourceHandler {
     }
 
     @Transactional
-    @Override
     public CommandProcessingResult processCommand(final JsonCommand command) {
 
         final String json = command.json();
