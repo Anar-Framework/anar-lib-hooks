@@ -4,12 +4,9 @@ package af.gov.anar.hooks.template.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import af.gov.anar.hooks.annotation.CommandType;
-import af.gov.anar.hooks.command.JsonCommand;
-import af.gov.anar.hooks.command.NewCommandSourceHandler;
+import af.gov.anar.hooks.infrastructure.common.command.JsonCommand;
 import af.gov.anar.hooks.template.domain.*;
 import af.gov.anar.hooks.template.exception.TemplateNotFoundException;
-import af.gov.anar.hooks.template.service.TemplateDomainService;
 import af.gov.anar.lang.data.CommandProcessingResult;
 import af.gov.anar.lang.data.CommandProcessingResultBuilder;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,5 @@
 
-package af.gov.anar.hooks.annotation;
+package af.gov.anar.hooks.infrastructure.common.annotation;
 
 import java.lang.annotation.*;
 

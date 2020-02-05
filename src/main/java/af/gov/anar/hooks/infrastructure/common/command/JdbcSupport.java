@@ -1,5 +1,5 @@
 
-package af.gov.anar.hooks.command;
+package af.gov.anar.hooks.infrastructure.common.command;
 
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import af.gov.anar.lib.date.DateUtility;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;

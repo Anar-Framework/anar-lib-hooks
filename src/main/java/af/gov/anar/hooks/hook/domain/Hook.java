@@ -2,7 +2,7 @@
 package af.gov.anar.hooks.hook.domain;
 
 import af.gov.anar.hooks.hook.api.HookApiConstants;
-import af.gov.anar.hooks.command.JsonCommand;
+import af.gov.anar.hooks.infrastructure.common.command.JsonCommand;
 import af.gov.anar.hooks.template.domain.Template;
 import af.gov.anar.lang.data.AbstractPersistableCustom;
 import com.google.gson.JsonArray;

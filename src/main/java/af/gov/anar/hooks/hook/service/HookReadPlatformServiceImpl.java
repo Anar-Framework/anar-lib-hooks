@@ -1,7 +1,7 @@
 
 package af.gov.anar.hooks.hook.service;
 
-import af.gov.anar.hooks.command.JdbcSupport;
+import af.gov.anar.hooks.infrastructure.common.command.JdbcSupport;
 import af.gov.anar.hooks.hook.data.*;
 import af.gov.anar.hooks.hook.domain.Hook;
 import af.gov.anar.hooks.hook.domain.HookRepository;

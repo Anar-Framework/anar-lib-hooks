@@ -1,9 +1,9 @@
 
 package af.gov.anar.hooks.hook.handler;
 
-import af.gov.anar.hooks.annotation.CommandType;
-import af.gov.anar.hooks.command.JsonCommand;
-import af.gov.anar.hooks.command.NewCommandSourceHandler;
+import af.gov.anar.hooks.infrastructure.common.annotation.CommandType;
+import af.gov.anar.hooks.infrastructure.common.command.JsonCommand;
+import af.gov.anar.hooks.infrastructure.common.command.NewCommandSourceHandler;
 import af.gov.anar.hooks.hook.service.HookWritePlatformService;
 import af.gov.anar.lang.data.CommandProcessingResult;
 import org.springframework.beans.factory.annotation.Autowired;

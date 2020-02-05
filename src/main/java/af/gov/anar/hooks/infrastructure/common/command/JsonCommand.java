@@ -1,5 +1,5 @@
 
-package af.gov.anar.hooks.command;
+package af.gov.anar.hooks.infrastructure.common.command;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

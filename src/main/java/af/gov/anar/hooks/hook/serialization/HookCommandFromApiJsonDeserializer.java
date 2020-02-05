@@ -2,7 +2,7 @@
 package af.gov.anar.hooks.hook.serialization;
 
 import af.gov.anar.hooks.hook.api.HookApiConstants;
-import af.gov.anar.hooks.command.FromJsonHelper;
+import af.gov.anar.hooks.infrastructure.common.command.FromJsonHelper;
 import af.gov.anar.lang.data.ApiParameterError;
 import af.gov.anar.lang.infrastructure.exception.common.InvalidJsonException;
 import af.gov.anar.lang.infrastructure.exception.common.PlatformApiDataValidationException;

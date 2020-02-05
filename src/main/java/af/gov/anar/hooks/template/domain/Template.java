@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import af.gov.anar.hooks.command.JsonCommand;
+import af.gov.anar.hooks.infrastructure.common.command.JsonCommand;
 import af.gov.anar.lang.data.AbstractPersistableCustom;
 import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.map.annotate.JsonSerialize;

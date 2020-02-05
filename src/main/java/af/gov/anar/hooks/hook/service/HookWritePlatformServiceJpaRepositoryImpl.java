@@ -20,8 +20,8 @@ import java.util.Set;
 
 import javax.persistence.PersistenceException;
 
-import af.gov.anar.hooks.command.FromJsonHelper;
-import af.gov.anar.hooks.command.JsonCommand;
+import af.gov.anar.hooks.infrastructure.common.command.FromJsonHelper;
+import af.gov.anar.hooks.infrastructure.common.command.JsonCommand;
 import af.gov.anar.hooks.template.domain.Template;
 import af.gov.anar.hooks.template.domain.TemplateRepository;
 import af.gov.anar.hooks.template.exception.TemplateNotFoundException;

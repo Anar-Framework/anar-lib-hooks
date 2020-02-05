@@ -1,5 +1,5 @@
 
-package af.gov.anar.hooks.command;
+package af.gov.anar.hooks.infrastructure.common.command;
 
 import af.gov.anar.lang.infrastructure.exception.common.InvalidJsonException;
 import af.gov.anar.lang.infrastructure.exception.common.UnsupportedParameterException;

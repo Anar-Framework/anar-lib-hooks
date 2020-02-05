@@ -13,7 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import af.gov.anar.hooks.command.JsonCommand;
+import af.gov.anar.hooks.infrastructure.common.command.JsonCommand;
 import af.gov.anar.lang.data.AbstractPersistableCustom;
 import org.apache.commons.lang.StringUtils;
 
